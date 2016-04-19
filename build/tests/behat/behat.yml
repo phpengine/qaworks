@@ -6,11 +6,11 @@ default:
     extensions:
         Behat\MinkExtension\Extension:
             default_session: selenium2
-            base_url: 'http://localhost/'
+            base_url: 'http://staging.qaworks.com:1403/contact.aspx'
             selenium2:
-                browser: safari
-                wd_host: a:b@1.2.3.4/wd/hub
-                capabilities: { "browser": "safari", "version": "6.0", "name": "News Test"}
+                browser: chrome
+                wd_host: a:b@127.0.0.1/wd/hub
+                  capabilities: { "browser": "safari", "version": "6.0", "name": "QA Works Test"}
     formatter:
         name: pretty,Behat\Behat\Formatter\JUnitAtomicFormatter
         parameters:
@@ -19,8 +19,8 @@ firefox-local:
     extensions:
         Behat\MinkExtension\Extension:
             default_session: selenium2
-            base_url:  'http://www.wordpress.vm/'
+            base_url:  'http://staging.qaworks.com:1403/contact.aspx'
             selenium2:
                 browser: firefox
-                wd_host: a:b@1.2.3.4:4444/wd/hub
+                wd_host: a:b@127.0.0.1:4444/wd/hub
                 capabilities: {"browser": "firefox"}
