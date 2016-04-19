@@ -10,7 +10,7 @@ default:
             selenium2:
                 browser: chrome
                 wd_host: a:b@127.0.0.1/wd/hub
-                  capabilities: { "browser": "safari", "version": "6.0", "name": "QA Works Test"}
+                  capabilities: { "browser": "chrome", "version": "43.0", "name": "QA Works Test"}
     formatter:
         name: pretty,Behat\Behat\Formatter\JUnitAtomicFormatter
         parameters:
@@ -23,4 +23,4 @@ firefox-local:
             selenium2:
                 browser: firefox
                 wd_host: a:b@127.0.0.1:4444/wd/hub
-                capabilities: {"browser": "firefox", "version": "6.0", "name": "QA Works Test"}
+                capabilities: {"browser": "firefox", "version": "33.0", "name": "QA Works Test"}
