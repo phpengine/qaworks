@@ -1,0 +1,26 @@
+# behat.yml
+default:
+    paths:
+        features: features
+        bootstrap: %behat.paths.features%/bootstrap
+    extensions:
+        Behat\MinkExtension\Extension:
+            default_session: selenium2
+            base_url: 'http://localhost/'
+            selenium2:
+                browser: safari
+                wd_host: a:b@1.2.3.4/wd/hub
+                capabilities: { "browser": "safari", "version": "6.0", "name": "News Test"}
+    formatter:
+        name: pretty,Behat\Behat\Formatter\JUnitAtomicFormatter
+        parameters:
+          output_path: null,atomic
+firefox-local:
+    extensions:
+        Behat\MinkExtension\Extension:
+            default_session: selenium2
+            base_url:  'http://www.wordpress.vm/'
+            selenium2:
+                browser: firefox
+                wd_host: a:b@1.2.3.4:4444/wd/hub
+                capabilities: {"browser": "firefox"}
