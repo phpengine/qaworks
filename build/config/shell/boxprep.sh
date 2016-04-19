@@ -9,10 +9,18 @@ apt-get install apache2 php5 php5-curl git parallel daemon unzip -y
 #
 #
 #
-echo "Install Git Key Safe script"
-cp /vagrant/build/config/shell/git-key-safe.sh /usr/bin/git-key-safe
-chmod 775 /usr/bin/git-key-safe
-chmod +x /usr/bin/git-key-safe
+echo "Install Pharaoh Configure"
+cd /tmp
+git clone git@github.com:PharaohTools/ptconfigure.git ptconfigure
+sudo ptconfigure/install-silent
+#
+echo "Use Pharaoh Configure to install some things"
+sudo ptconfigure chrome install -yg
+sudo ptconfigure chromedriver install -yg
+sudo ptconfigure firefox33 install -yg
+sudo ptconfigure git-key-safe install -yg
+sudo ptconfigure rubyrvm install -yg
+# sudo ptconfigure git-key-safe install -yg
 #
 #
 #
@@ -81,8 +89,8 @@ echo "Installing Behat with Composer"
 #
 #
 #
-cp /vagrant/builild/config/behat/Formatter/JUnitFormatter.php /opt/behat/vendor/behat/behat/src/Behat/Behat/Formatter/JUnitFormatter.php
-cp /vagrant/bud/config/behat/Formatter/JUnitAtomicFormatter.php /opt/behat/vendor/behat/behat/src/Behat/Behat/Formatter/JUnitAtomicFormatter.php
+cp /vagrant/build/config/behat/Formatter/JUnitFormatter.php /opt/behat/vendor/behat/behat/src/Behat/Behat/Formatter/JUnitFormatter.php
+cp /vagrant/build/config/behat/Formatter/JUnitAtomicFormatter.php /opt/behat/vendor/behat/behat/src/Behat/Behat/Formatter/JUnitAtomicFormatter.php
 echo "Installing Our Custom Behat Mink Extension"
 cp /vagrant/build/config/behat/MinkExtension/Extension.php /opt/behat/vendor/behat/mink-extension/src/Behat/MinkExtension/Extension.php
 echo "Installing Our Custom Behat Base Node Definition"
