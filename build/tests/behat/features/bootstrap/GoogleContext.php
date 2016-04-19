@@ -12,8 +12,7 @@ use Behat\MinkExtension\Context\MinkContext;
  * Behat context class.
  */
 
-class GoogleContext extends BehatContext implements ContextInterface
-{
+class GoogleContext extends BehatContext implements ContextInterface {
 
     /**
      * @Then /^I should see the google logo$/

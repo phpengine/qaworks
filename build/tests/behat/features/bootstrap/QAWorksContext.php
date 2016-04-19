@@ -12,7 +12,7 @@ use Behat\MinkExtension\Context\MinkContext;
  * Behat context class.
  */
 
-class GoogleContext extends BehatContext implements ContextInterface {
+class QAWorksContext extends BehatContext implements ContextInterface {
 
     /**
      * @Then /^I should see the google logo$/
@@ -32,13 +32,11 @@ class GoogleContext extends BehatContext implements ContextInterface {
         if (!$menu) { throw new Exception('No Google Menu there'); }
     }
 
-
     /**
      * @Then /^I am the boss$/
      */
     public function iAmTheBoss() {
         echo "who else\n" ;
     }
-
 
 }
